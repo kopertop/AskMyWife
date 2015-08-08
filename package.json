@@ -1,0 +1,22 @@
+{
+  "name": "AskMyWife",
+  "version": "0.0.1",
+  "description": "Simple Alexa Skills Kit demonstration tying into Twilio to 'Ask My Wife' a question.",
+  "author": "Chris Moyer <kopertop@gmail.com>",
+  "keywords": [
+    "alexa",
+    "twilio",
+    "communications"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kopertop/AskMyWife.git"
+  },
+  "private": false,
+  "main": "app",
+  "scripts": {},
+  "dependencies": {
+    "twilio": "^2.2.1"
+  },
+  "devDependencies": {}
+}
