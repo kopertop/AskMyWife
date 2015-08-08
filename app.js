@@ -59,7 +59,7 @@ function askMyWifeQuestion(intent, session, callback) {
 			Skill.buildSpeechletResponse(intent.name, speechOutput, repromptText, shouldEndSession));
 }
 
-module.exports = new Skill({
+var skill = new Skill({
 	welcomeText: 'You will need to tell me the phone number for your wife first, ' +
 		'and she will need to approve you sending text messages to her. ' +
 		'Try saying My Wife\'s Phone Number is. ',
@@ -68,4 +68,11 @@ module.exports = new Skill({
 	SetPhoneNumber: setPhoneNumberInSession,
 	AskMyWifeQuestion: askMyWifeQuestion,
 });
+
+// Something is broken with how Lambda calls this handler function,
+// so we can't just directly link exports.handler to skill.handler, because
+// it doesn't call it with the right context.
+exports.handler = function handleLambdaRequest(event, context) {
+	skill.handler(event, context);
+};
 
