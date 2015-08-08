@@ -3,7 +3,7 @@
  */
 'use strict';
 
-var Skill = require('./li/skill');
+var Skill = require('./lib/skill');
 
 /**
  * Sets the phone number for your wife.
